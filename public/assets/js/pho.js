@@ -24,7 +24,7 @@ var initialize = function() {
 }
 
 var loadRiot = function() {
-  _loadJS("http://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js", "text/javascript", initializeParse, document.body);
+  _loadJS("http://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js", "text/javascript", initialize, document.body);
 }
 
 var loadTags = function() {
