@@ -23,24 +23,24 @@ var Pho = function(app_id) {
     var user = new Parse.User.current();
     console.log("username is "+user.getUsername())
     riot.mount('pho-username', { parseuser: user })
-  }
+  };
 
   var loadTags = function() {
     console.log("Riot compiler loaded");
     console.log("Loading Pho-username tag");
     _loadJS("public/assets/js/pho-username.tag", "riot/tag", undefined, document.body);
     initializeScripts();
-  }
+  };
 
   var loadRiot = function() {
     console.log("Parse JS loaded");
     console.log("Loading Riot compiler");
     _loadJS("http://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js", "text/javascript", loadTags, document.body);
-  }
+  };
 
   var init() {
     console.log("loading Parse JS");
     _loadJS('http://www.parsecdn.com/js/parse-latest.js', "text/javascript", loadRiot, document.body);
-  }
+  };
 
 };
