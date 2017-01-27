@@ -49,6 +49,10 @@ app.get('/client', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/client.html'));
 });
 
+app.get('/client_v2', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/client_v2.html'));
+});
+
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
