@@ -13,20 +13,41 @@
 
 </head>
 <body>
+  My username is: <pho-username></pho-username>
+
   <script type="text/javascript">
     Parse.initialize("myAppId" /*, "JAVASCRIPT_KEY"*/);
     Parse.serverURL = "https://mealcounter-parse.herokuapp.com/parse";
 
-    var TestObject2 = Parse.Object.extend("TestObject2");
-    var testObject2 = new TestObject2();
-      testObject2.save({foo: "bar"}, {
-      success: function(object) {
-        alert("success");
-      },
-      error: function(model, error) {
-        alert("fail");
-      }
-    });
+    var user = new Parse.User();
+    /*
+user.set("username", "my name");
+user.set("password", "my pass");
+user.set("email", "email@example.com");
+
+// other fields can be set just like with Parse.Object
+user.set("phone", "415-392-0202");
+
+user.signUp(null, {
+  success: function(user) {
+    alert("Hooray! Let them use the app now.");
+  },
+  error: function(user, error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+*/
   </script>
+
+
+
+  <script src="pho-username.tag" type="riot/tag"></script>
+  <!-- scripts we need -->
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+
+    <!-- mount this app -->
+    <script> riot.mount('pho-username', { parseuser: user }) </script>
+
 </body>
 </html>
