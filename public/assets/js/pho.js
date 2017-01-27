@@ -5,8 +5,8 @@ var Pho = (function() {
     //insert the <script> element
 
     var scriptTag = document.createElement('script');
+    scriptTag.type = type;
     scriptTag.src = url;
-    scriptTag.type = "";
 
     scriptTag.onload = implementationCode;
     scriptTag.onreadystatechange = implementationCode;
