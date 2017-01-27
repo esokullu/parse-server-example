@@ -38,7 +38,7 @@ var Pho = function(app_id) {
     _loadJS("http://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js", "text/javascript", loadTags, document.body);
   };
 
-  var init() {
+  var init = function() {
     console.log("loading Parse JS");
     _loadJS('http://www.parsecdn.com/js/parse-latest.js', "text/javascript", loadRiot, document.body);
   };
