@@ -49,7 +49,7 @@ app.get('/client', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/client.html'));
 });
 
-app.get('/client_v2', function(req, res) {
+app.get('/clientv2', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/client_v2.html'));
 });
 
