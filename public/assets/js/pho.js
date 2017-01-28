@@ -18,7 +18,7 @@ var Pho = function() {
 
   var initializeScripts = function() {
     console.log("Pho-username tag loaded");
-    console.log("Will initialize Parse with the app id: "+parse_id)
+    console.log("Will initialize Parse with the app id: "+parse_id+" and global app id: "+this.parse_id)
     Parse.initialize(parse_id/*"myAppId" , "JAVASCRIPT_KEY"*/);
     Parse.serverURL = "https://mealcounter-parse.herokuapp.com/parse";
 
@@ -41,7 +41,7 @@ var Pho = function() {
   };
 
   this.init = function(app_id) {
-    parse_id = app_id;
+    this.parse_id = app_id;
     console.log("loading Parse JS");
     _loadJS('http://www.parsecdn.com/js/parse-latest.js', "text/javascript", loadRiot, document.body);
   }
