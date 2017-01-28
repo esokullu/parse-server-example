@@ -30,13 +30,15 @@ var app = express();
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
 
+app.get("/parse/bok", function(req, res) {
+  res.send("hello world");
+});
+
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-app.get("/parse/bok", function(req, res) {
-  res.send("hello world");
-});
+
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
