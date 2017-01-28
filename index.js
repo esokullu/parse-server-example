@@ -3,6 +3,7 @@
 
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
+//var ClassesRouter = require('parse-server').ClassesRouter;
 var path = require('path');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
@@ -38,6 +39,10 @@ app.get("/parse/bok", function(req, res) {
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
+
+app.get("/parse/groups/:group_id", function(req, res) {
+  res.send("info regarding group id "+request.params.group_id);
+});
 
 
 // Parse Server plays nicely with the rest of your web routes
