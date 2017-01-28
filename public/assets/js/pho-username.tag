@@ -1,6 +1,6 @@
 <pho-username>
 
-  <span>{ username }</span>
+  <span style="color:inherit;">{ username }</span>
 
   <script>
     this.username = opts.parseuser ? opts.parseuser.getUsername() : ""
