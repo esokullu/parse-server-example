@@ -41,7 +41,7 @@ app.use(mountPath, api);
 
 
 app.get("/parse/groups/:group_id", function(req, res) {
-  res.send("info regarding group id "+request.params.group_id);
+  res.send("info regarding group id "+req.params.group_id);
 });
 
 
