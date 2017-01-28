@@ -35,15 +35,20 @@ app.get("/parse/bok", function(req, res) {
   res.send("hello world");
 });
 
+
+api.get("/groups/:group_id", function(req, res) {
+  res.send("info regarding group id "+req.params.group_id);
+});
+
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-
+/*
 app.get("/parse/groups/:group_id", function(req, res) {
   res.send("info regarding group id "+req.params.group_id);
 });
-
+*/
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
