@@ -1,4 +1,5 @@
-var Pho = function(app_id) {
+var Pho = function() {
+  var parse_id = undefined;
   var _loadJS = function(url, type, implementationCode, location){
     //url is URL of external file, implementationCode is the code
     //to be called from the file, location is the location to
@@ -17,7 +18,8 @@ var Pho = function(app_id) {
 
   var initializeScripts = function() {
     console.log("Pho-username tag loaded");
-    Parse.initialize(app_id/*"myAppId" , "JAVASCRIPT_KEY"*/);
+    console.log("Will initialize Parse with the app id: "+parse_id)
+    Parse.initialize(parse_id/*"myAppId" , "JAVASCRIPT_KEY"*/);
     Parse.serverURL = "https://mealcounter-parse.herokuapp.com/parse";
 
     var user = new Parse.User.current();
@@ -38,9 +40,10 @@ var Pho = function(app_id) {
     _loadJS("http://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js", "text/javascript", loadTags, document.body);
   };
 
-  var init = function() {
+  this.init = function(app_id) {
+    parse_id = app_id;
     console.log("loading Parse JS");
     _loadJS('http://www.parsecdn.com/js/parse-latest.js', "text/javascript", loadRiot, document.body);
-  };
+  }
 
 };
